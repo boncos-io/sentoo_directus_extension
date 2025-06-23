@@ -4,4 +4,4 @@ This repository contains a third-party Directus extension that integrates [Sento
 
 > **Note:** This extension is not built, endorsed, or supported by Sentoo. An active Sentoo merchant account is required to use this integration.
 
-For detailed setup and usage instructions, see the [extension README](extension/README.md) [extension README](extension/README.md)
+For detailed setup and usage instructions, see the [extension README](extension/README.md)

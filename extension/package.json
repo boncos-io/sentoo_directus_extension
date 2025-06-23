@@ -1,5 +1,5 @@
 {
-  "name": "@boncos/sentoo-directus-extension",
+  "name": "@boncos.io/sentoo-directus-extension",
   "description": "A Directus extension that integrates Sentoo, allowing seamless payment processing by creating transactions directly in a dedicated transaction table.",
   "icon": "extension",
   "version": "1.0.0",
