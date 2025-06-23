@@ -1,0 +1,25 @@
+# Ignore node modules and logs
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore local config and environment files
+.env
+.env.*
+
+# Ignore build output
+dist/
+
+# Ignore Directus-specific folders that shouldn't be committed
+database/
+uploads/
+extensions/
+
+# Ignore OS and editor files
+.DS_Store
+.vscode/
+.idea/
+
+# Ignore test snapshots (if using Jest)
+__snapshots__/

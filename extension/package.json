@@ -1,0 +1,85 @@
+{
+  "name": "@boncos/sentoo-directus-extension",
+  "description": "A Directus extension that integrates Sentoo, allowing seamless payment processing by creating transactions directly in a dedicated transaction table.",
+  "icon": "extension",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Boncos.io",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/boncos-io/sentoo_directus_extension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/boncos-io/sentoo_directus_extension/issues"
+  },
+  "homepage": "https://github.com/boncos-io/sentoo_directus_extension#readme",
+  "keywords": [
+    "directus",
+    "directus-extension",
+    "directus-extension-bundle",
+    "sentoo",
+    "payment",
+    "payment extension",
+    "boncos",
+    "boncos aruba"
+  ],
+  "type": "module",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "directus:extension": {
+    "type": "bundle",
+    "path": {
+      "app": "dist/app.js",
+      "api": "dist/api.js"
+    },
+    "entries": [
+      {
+        "type": "hook",
+        "name": "sentoo-directus-extension-bootstrap-hook",
+        "source": "src/hooks/bootstrap/index.ts"
+      },
+      {
+        "type": "operation",
+        "name": "directus-extension-pay-with-sentoo",
+        "source": {
+          "app": "src/operations/pay/app.ts",
+          "api": "src/operations/pay/api.ts"
+        }
+      },
+      {
+        "type": "endpoint",
+        "name": "sentoo-directus-extension-transaction-status-endpoint",
+        "source": "src/endpoints/transaction-status/index.ts"
+      }
+    ],
+    "host": "^10.10.0"
+  },
+  "scripts": {
+    "build": "directus-extension build",
+    "dev": "directus-extension build -w --no-minify",
+    "link": "directus-extension link",
+    "validate": "directus-extension validate",
+    "add": "directus-extension add"
+  },
+  "devDependencies": {
+    "@directus/errors": "^2.0.1",
+    "@directus/extensions": "3.0.6",
+    "@directus/extensions-sdk": "13.1.1",
+    "@directus/types": "13.1.2",
+    "@types/node": "^24.0.3",
+    "pino": "9.7.0",
+    "typescript": "^5.8.3",
+    "vue": "^3.5.17"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "liquidjs": "^10.21.1"
+  },
+  "overrides": {
+    "vite": "6.3.5",
+    "brace-expansion": "2.0.2"
+  }
+}

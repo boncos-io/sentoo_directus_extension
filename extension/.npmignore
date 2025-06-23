@@ -1,0 +1,21 @@
+# Exclude dev stuff
+src/
+tests/
+node_modules/
+*.log
+*.ts
+*.map
+*.env
+
+# Exclude config and tooling
+.vscode/
+.git/
+.gitignore
+.eslintrc.*
+.prettier*
+tsconfig.json
+package-lock.json
+
+# Include dist and readme images
+!dist/
+!readme_images/
