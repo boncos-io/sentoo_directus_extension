@@ -2,7 +2,7 @@
   "name": "@boncos.io/sentoo-directus-extension",
   "description": "A Directus extension that integrates Sentoo, allowing seamless payment processing by creating transactions directly in a dedicated transaction table.",
   "icon": "extension",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "author": "Boncos.io",
   "private": false,
@@ -80,6 +80,7 @@
   },
   "overrides": {
     "vite": "6.3.5",
+    "axios": "1.12.0",
     "brace-expansion": "2.0.2"
   }
 }

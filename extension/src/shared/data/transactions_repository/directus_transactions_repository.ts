@@ -10,9 +10,8 @@ import Transaction, {
 export const TRANSACTIONS_TABLE_NAME = "sentoo_transactions";
 
 export default class DirectusTransactionsRepository
-  implements TransactionsRepository
-{
-  constructor(private readonly extensionContext: ApiExtensionContext) {}
+  implements TransactionsRepository {
+  constructor(private readonly extensionContext: ApiExtensionContext) { }
   public async createTransaction(
     data: TransactionCreateData
   ): Promise<TransactionPrimaryKey> {
@@ -57,6 +56,9 @@ export default class DirectusTransactionsRepository
       {
         knex: this.extensionContext.database,
         schema: schema,
+        accountability: {
+          admin: true,
+        } as any,
       }
     );
   }

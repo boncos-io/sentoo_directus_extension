@@ -4,7 +4,7 @@ import Settings from "../../domain/settings";
 import { logger } from "../../utils/logger";
 
 export default class DirectusSettingsRepository implements SettingsRepository {
-  constructor(private readonly extensionContext: ApiExtensionContext) {}
+  constructor(private readonly extensionContext: ApiExtensionContext) { }
 
   public async getSettings(): Promise<Settings> {
     try {
@@ -42,6 +42,9 @@ export default class DirectusSettingsRepository implements SettingsRepository {
     return new this.extensionContext.services.SettingsService({
       knex: this.extensionContext.database,
       schema: schema,
+      accountability: {
+        admin: true,
+      } as any,
     });
   }
 }

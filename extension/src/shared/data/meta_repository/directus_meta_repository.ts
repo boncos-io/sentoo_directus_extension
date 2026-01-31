@@ -5,7 +5,7 @@ import { logger } from "../../utils/logger";
 export const META_TABLE_NAME = "sentoo_meta_info";
 
 export default class DirectusMetaRepository implements MetaRepository {
-  constructor(private readonly extensionContext: ApiExtensionContext) {}
+  constructor(private readonly extensionContext: ApiExtensionContext) { }
 
   async getAppliedVersion(): Promise<number | null> {
     try {
@@ -41,6 +41,9 @@ export default class DirectusMetaRepository implements MetaRepository {
     return new this.extensionContext.services.ItemsService(META_TABLE_NAME, {
       knex: this.extensionContext.database,
       schema: schema,
+      accountability: {
+        admin: true,
+      } as any,
     });
   }
 }
